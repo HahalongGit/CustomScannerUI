@@ -1,0 +1,2 @@
+include ':app', ':SinopecSDKLib'
+rootProject.name='SinopecSDKTest'

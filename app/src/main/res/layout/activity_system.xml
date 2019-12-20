@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#FFFFFF">
+
+    <include
+        layout="@layout/left_scroll"/>
+
+
+    <ScrollView
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="getSerialNo"
+                android:text="终端序列号(TUSN)"
+            />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="getIMSI"
+                android:text="IMSI号"
+            />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="getIMEI"
+                android:text="IMEI号"
+            />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="getModel"
+                android:text="获取终端型号"
+            />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="getAndroidOSVersion"
+                android:text="获取 Android 操作系统版本"
+            />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="getROMVersion"
+                android:text="获取终端 ROM 版本"
+            />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

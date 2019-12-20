@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <include layout="@layout/left_scroll" />
+
+
+    <ScrollView
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/rg_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rb_front"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="前置扫码" />
+
+                <RadioButton
+                    android:id="@+id/rb_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="后置扫码" />
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/cb_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="是否有界面" />
+
+            <CheckBox
+                android:id="@+id/cb_pi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="持续扫码" />
+
+            <CheckBox
+                android:id="@+id/cb_beep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="蜂鸣" />
+
+            <!--<CheckBox-->
+            <!--android:id="@+id/cb1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:checked="true"-->
+            <!--android:text="是否为后置扫码" />-->
+
+            <EditText
+                android:id="@+id/timeout_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="超时时间s"
+                android:inputType="number"
+                android:maxEms="10"
+                android:text="15000" />
+
+            <CheckBox
+                android:id="@+id/cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="5s后自动调用stop接口" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="startScan"
+                android:text="扫码" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="stopScan"
+                android:text="停止扫描" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
