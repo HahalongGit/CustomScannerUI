@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 
 /**
  * desc : bitmap 工具
@@ -101,9 +102,12 @@ public class BitmapUtil {
     public static Bitmap getDecodeAbleBitmap(String picturePath) {
         try {
             BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inPreferredConfig = Bitmap.Config.RGB_565;
             options.inJustDecodeBounds = true;
             BitmapFactory.decodeFile(picturePath, options);
-            int sampleSize = options.outHeight / 700;
+            Log.e("TAG", "DecodeAbleBitmap-size:" + options.outHeight / 640);
+            int sampleSize = (int) (options.outHeight / 640.0 + 0.5);
+            Log.e("TAG", "DecodeAbleBitmap-sampleSize:" + sampleSize);
             if (sampleSize <= 0) {
                 sampleSize = 1;
             }
@@ -116,7 +120,6 @@ public class BitmapUtil {
             return null;
         }
     }
-
 
     /**
      * 将彩色图转换为灰度图
@@ -149,7 +152,6 @@ public class BitmapUtil {
         result.setPixels(pixels, 0, width, 0, 0, width, height);
         return result;
     }
-
 
     /**
      * 对图片进行二值化处理

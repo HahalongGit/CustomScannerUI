@@ -3,6 +3,8 @@ package com.centerm.sinopecsdktest.view;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import com.centerm.sinopecsdktest.util.SaveImageUtil;
+
 import posapp.com.qgsypos.sdk.aidl.scanner.IScanner;
 
 /**
@@ -56,6 +58,7 @@ public class ScanView extends BarCoderView implements ScanBoxView.ScanBoxClickLi
         if (isStop) {
             return;
         }
+        SaveImageUtil.saveData(data,left,top,width,height,rowWidth);
         if (mScanListener != null) {
             mScanListener.onScanSuccess(data, width, height);
         }
