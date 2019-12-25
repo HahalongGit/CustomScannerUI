@@ -28,4 +28,10 @@ interface IDeviceManager {
       */
     IBinder getDeviceManager();
 
+    /**
+     * 获取读卡器对象
+     *
+     **/
+    IBinder getCardReader();
+
 }
