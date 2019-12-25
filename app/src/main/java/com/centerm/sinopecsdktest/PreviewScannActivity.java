@@ -185,6 +185,12 @@ public class PreviewScannActivity extends BaseTestActivity implements ScanListen
             return;
         }
 
+
+//        Bitmap bitmap0 = readBitmapFromAssets("barcode.png");
+//        ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+//        bitmap.compress(Bitmap.CompressFormat.PNG, 90, outStream);
+//        outStream.toByteArray();
+
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         byte[] datas = baos.toByteArray();

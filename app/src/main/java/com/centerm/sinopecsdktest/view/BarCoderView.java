@@ -115,8 +115,6 @@ abstract class BarCoderView extends FrameLayout implements Camera.PreviewCallbac
             int rowWidth = size.width;
             int rowHeight = size.height;
 
-//            SaveImageUtil.saveData(data, left, top, width, height, rowWidth);
-
             // 这里需要把得到的数据也翻转
             boolean portrait = CameraUtil.isPortrait(getContext());
             if (portrait) {

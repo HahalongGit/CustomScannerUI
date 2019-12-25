@@ -58,7 +58,6 @@ public class ScanView extends BarCoderView implements ScanBoxView.ScanBoxClickLi
         if (isStop) {
             return;
         }
-        SaveImageUtil.saveData(data,left,top,width,height,rowWidth);
         if (mScanListener != null) {
             mScanListener.onScanSuccess(data, width, height);
         }
